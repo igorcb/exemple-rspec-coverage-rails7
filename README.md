@@ -1,24 +1,23 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+App para exemplo configurar
 
-Things you may want to cover:
+* RSpec ✅
 
-* Ruby version
+* Coverage ✅
 
-* System dependencies
+* Rubocop ❌
 
-* Configuration
+Feito em
 
-* Database creation
+* Ruby 3.0.4 ✅
 
-* Database initialization
+* Rails 7.04 ✅
 
-* How to run the test suite
+* Postgres ✅
 
-* Services (job queues, cache servers, search engines, etc.)
+* Bootstrap 5.0 ❌
 
-* Deployment instructions
+* Circle CI ❌
 
-* ...
+* Deployment instructions ❌
