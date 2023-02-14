@@ -1,14 +1,19 @@
 require "simplecov"
 require "notifier"
 require "colorize"
+# require "action_cable/engine"
+require File.expand_path("../config/environment", __dir__)
+require "rspec/rails"
+require "factory_bot"
 
 RUN_SPECS = ARGV.include?("spec")
 PERCENT_LINES = 100
 PERCENT_BRANCHES = 76
 
-SimpleCov.start do
+SimpleCov.start "rails" do
   add_filter "/channels/"
   add_filter "/config/"
+  add_filter "/helpers/"
   add_filter "spec/support/chrome.rb"
   add_filter "spec/line_coverage.rb"
   add_filter "spec/rails_helper"
@@ -28,7 +33,6 @@ SimpleCov.at_exit do
   if RSpec.world.all_examples.map(&:exception).compact.empty?
     Dir["app/**/*.rb"].each { |f| require File.expand_path(f) }
 
-    
     load "line_coverage.rb"
     LineCoverage.compare ARGV
     files = LineCoverage.local_coverage    

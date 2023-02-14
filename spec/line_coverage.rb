@@ -39,8 +39,7 @@ class LineCoverage
 
     runing_all_test = ARGV.empty?
     local_coverage_ok = down_filtereds.all? { |_file, info| info[:covered_lines] == 100 }
-   
-    puts "RuningTest: #{runing_all_test} and Cobertura: #{local_coverage_ok}"
+       
     return if runing_all_test && local_coverage_ok
 
     warn "Falta fazer cobertura nos seguintes arquivos:" if down_filtereds.any?
