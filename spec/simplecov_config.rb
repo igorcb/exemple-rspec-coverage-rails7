@@ -8,7 +8,7 @@ require "factory_bot"
 
 RUN_SPECS = ARGV.include?("spec")
 PERCENT_LINES = 100
-PERCENT_BRANCHES = 76
+PERCENT_BRANCHES = 100
 
 SimpleCov.start "rails" do
   add_filter "/channels/"
@@ -24,7 +24,7 @@ SimpleCov.start "rails" do
   add_group "Services", "app/services"
 
   enable_coverage :branch
-  minimum_coverage line: PERCENT_LINES, branch: 100
+  minimum_coverage line: PERCENT_LINES, branch: PERCENT_BRANCHES
 end
 
 SimpleCov.at_exit do
