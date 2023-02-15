@@ -1,26 +1,21 @@
 require "simplecov"
 require "notifier"
 require "colorize"
-# require "action_cable/engine"
-require File.expand_path("../config/environment", __dir__)
-require "rspec/rails"
-require "factory_bot"
 
 RUN_SPECS = ARGV.include?("spec")
 PERCENT_LINES = 100
 PERCENT_BRANCHES = 100
 
-SimpleCov.start "rails" do
+SimpleCov.start do
   add_filter "/channels/"
   add_filter "/config/"
-  add_filter "/helpers/"
-  add_filter "spec/support/chrome.rb"
-  add_filter "spec/line_coverage.rb"
-  add_filter "spec/rails_helper"
+  add_filter "/spec/"
 
   add_group "Controllers", "app/controllers"
   add_group "Models", "app/models"
   add_group "Helpers", "app/helpers"
+  add_group "Jobs", "app/jobs"
+  add_group "Mailers", "app/mailers"
   add_group "Services", "app/services"
 
   enable_coverage :branch
@@ -49,20 +44,18 @@ SimpleCov.at_exit do
     puts "Cobertura total por  ramos: #{format("%#.2f", branch_covered_percent)} %".colorize(:white)
     
     Notifier.notify(image: "image.png", title: "Bateria de testes", message: "Os testes termiram de rodar!", "color": "#764FA5")
-
+    
     if cover_down
       SimpleCov.result.format!
-      
+
       if covered_percent < PERCENT_LINES || branch_covered_percent < PERCENT_BRANCHES
         puts "COVERAGE TESTE DOWN".colorize(:red)
         exit(1)
       end
     else 
       puts "COVERAGE TOTAL OK".colorize(:green)
-    end
-    
+    end    
   end 
-  
 end
 
 def require_covered_files
