@@ -1,5 +1,5 @@
 module ApplicationHelper
-  def sitename
-    "Sitename"
+  def page_title
+    @title || nil
   end
 end
