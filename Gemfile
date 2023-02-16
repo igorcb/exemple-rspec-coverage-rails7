@@ -1,5 +1,5 @@
 source "https://rubygems.org"
-git_source(:github) { |repo| "https://github.com/#{repo}.git" }
+# git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby "3.0.5"
 gem "rails", "~> 7.0.4"
@@ -23,7 +23,6 @@ gem "bootsnap", require: false
 group :development do
   # Use console on exceptions pages [https://github.com/rails/web-console]
   gem "web-console"
-   gem "debug" 
 end
 
 group :development, :test do
@@ -34,6 +33,12 @@ group :development, :test do
   gem "faker"
   gem "colorize", require: nil
   gem "notifier"
+  gem "rubocop", require: false
+  gem "rubocop-git", require: false
+  gem "rubocop-performance", require: false
+  gem "rubocop-rails", require: false
+  gem "rubocop-rspec", require: false
+
 end
 
 group :test do
@@ -43,5 +48,4 @@ group :test do
   gem "webdrivers"
   gem "fuubar"
   gem "simplecov", require: false
-   gem "debug" 
 end
