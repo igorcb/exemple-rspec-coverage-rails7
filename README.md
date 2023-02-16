@@ -6,7 +6,7 @@ App para exemplo configurar
 
 * Coverage ✅
 
-* Rubocop ❌
+* Rubocop ✅
 
 Feito em
 
@@ -17,6 +17,8 @@ Feito em
 * Postgres ✅
 
 * Bootstrap 5.0 ❌
+
+* Github Actions
 
 * Circle CI ❌
 

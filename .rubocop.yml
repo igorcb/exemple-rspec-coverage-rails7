@@ -30,5 +30,15 @@ Performance/MapCompact:
 RSpec/Rails/InferredSpecType:
   Enabled: false
 
+RSpec/ContextWording:
+  Enabled: false
+
+RSpec/NamedSubject:
+  Enabled: false  
+
+RSpec/MultipleExpectations:
+  Enabled: false  
+
 Rails/HelperInstanceVariable:
   Enabled: false
+
