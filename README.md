@@ -2,23 +2,23 @@
 
 App para exemplo configurar
 
-* RSpec ✅
+* RSpec    ✅
 
 * Coverage ✅
 
-* Rubocop ✅
+* Rubocop  ✅
 
 Feito em
 
 * Ruby 3.0.4 ✅
 
-* Rails 7.04 ✅
+* Rails 7.0.4 ✅
 
-* Postgres ✅
+* Postgres   ✅
 
 * Bootstrap 5.0 ❌
 
-* Github Actions
+* Github Actions ❌
 
 * Circle CI ❌
 
