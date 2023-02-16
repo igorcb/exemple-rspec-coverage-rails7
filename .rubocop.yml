@@ -1,0 +1,34 @@
+require:
+  - 'rubocop-performance'
+  - 'rubocop-rails'
+  - 'rubocop-rspec'
+
+AllCops:
+  DefaultFormatter: fuubar
+  DisplayStyleGuide: true
+  ExtraDetails: true
+  NewCops: enable
+  Exclude:
+    - 'bin/*'
+    - 'config/**/*'
+    - 'db/migrate/*'
+    - 'db/schema.rb'
+
+Metrics: # habilitado apenas no Code Climate
+  Enabled: false    
+
+Style/Documentation:
+  Enabled: false  
+
+Style/FrozenStringLiteralComment:
+  Enabled: false
+
+### rubocop-performance
+Performance/MapCompact:
+  Enabled: false
+
+RSpec/Rails/InferredSpecType:
+  Enabled: false
+
+Rails/HelperInstanceVariable:
+  Enabled: false
